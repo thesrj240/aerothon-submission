@@ -24,17 +24,28 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 connection.connect();
  
-connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
-  if (error) throw error;
-  console.log('The solution is: ', results[0].solution);
-});
+// connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
+//   if (error) throw error;
+//   console.log('The solution is: ', results[0].solution);
+// });
 
-app.get('/phree', (req, res) => res.render('./form'))
+app.get('/data', (req, res) => res.render('./form_a320'))
 
-app.get('/wan', (req, res) => {
+app.get('/news', (req, res) => {
 	connection.query('SELECT * from news', function (error, results, fields) {
 	  if (error) throw error;
 	  console.log('The solution is: ', JSON.stringify(results,null,4));
 	  res.send(JSON.stringify(results),null,4)
+	});
+})
+
+app.post("/submitted",function(res,req){
+	connection.query("insert into news (title, description) values ('Headline 3', 'This is yet another not very useful description for the headline')",function(err,res){
+		if(err){
+			console.log(err)
+		}
+		else{
+			console.log("Success")
+		}
 	});
 })

@@ -9,9 +9,11 @@
 
   <!-- Custom styles for this template -->
   <link href="css/main.css" rel="stylesheet">
+
 </head>
 
 <body>
+
     <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -25,31 +27,65 @@
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <!-- <li class="active"><a href="/wan">News</a></li> -->
-          <li><a href="/wan">A320</a></li>
+          <!-- <li class="active"><a href="/news">News</a></li> -->
+          <li><a href="/data">A320</a></li>
           <!-- <li><a href="#too">Button2</a></li> -->
-          <li><a href="/phree">A330</a></li>
-          <li><a href="/phree">A350</a></li>
-          <li><a href="/phree">Search</a></li>
+          <li><a href="/data/a330">A330</a></li>
+          <li><a href="/data/a350">A350</a></li>
+          <li><a href="/data/search">Search</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
   </nav>
   <div class="qfc-container">
-    <h2>Form Title</h2>
-    <label>Description of Lorem ipsum dolor sit amet, consectetur adipiscing elit.</label>
-    <form>
+    <h2>A320</h2>
+    <label>Please enter the details below.</label>
+    <form id="form1" onsubmit="myFunction()" action="/submitted" method="post">
       <div>
         <div>
-            <input placeholder="Full Name" type="text" required>
+            <!-- <input placeholder="Full Name" type="text" > -->
+            <input placeholder="MSN" type="number" min="0" max="99999" >
         </div>
         <div>
-            <input placeholder="Phone Number" type="tel" required>
+            <input placeholder="Harness Length" type="number" >
         </div>
         <div>
-            <input placeholder="Email Address" type="email" required>
+            <input placeholder="Gross Weight" type="number" >
         </div>
         <div>
+            <input placeholder="Atmospheric Pressure" type="number" >
+        </div>
+        <div>
+            <input placeholder="Room Temperature" type="number" >
+        </div>
+        <div>
+          <label>Your City (single-select)</label>
+          <select id>
+                        <option disabled selected value="--">Airport</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Kolkata">Kolkata</option>
+                    </select>
+        </div>
+        <div>
+            <input placeholder="Fuel Capacity on Left Wing" type="number" >
+        </div>
+        <div>
+            <input placeholder="Fuel Capacity on Right Wing" type="number" >
+        </div>
+        <div>
+            <input placeholder="Fuel Quantity on Left Wing" type="number" >
+        </div>
+        <div>
+            <input placeholder="Fuel Quantity on Right Wing" type="number" >
+        </div>
+        <div>
+            <input placeholder="Maximum Altitude to be Reached" type="number" >
+        </div>
+        <div>
+            <input placeholder="Flight no." type="text" >
+        </div>
+        <!-- <div>
           <label>Gender</label>
           <div>
             <label>
@@ -97,20 +133,23 @@
           <div>
             <input type="file" id>
           </div>
-        </div>
+        </div> -->
         <div>
           <button type="submit">Submit</button>
         </div>
       </div>
     </form>
   </div>
+  <script src="js/submits.js"></script>
 </body>
-<div style="padding-bottom:15px; font-family: 'Roboto';color:white;" align="center">
-  made with <span style="color:#e25555;">❤</span> by <a target="_blank" href="https://twitter.com/siwalik">@siwalik</a> and the <a target="_blank" href="https://github.com/siwalikm/quick-form-css/graphs/contributors">internet</a></div>
+<!-- <div style="padding-bottom:15px; font-family: 'Roboto';color:white;" align="center">
+  made with <span style="color:#e25555;">❤</span> by <a target="_blank" href="https://twitter.com/siwalik">@siwalik</a> and the <a target="_blank" href="https://github.com/siwalikm/quick-form-css/graphs/contributors">internet</a></div> -->
+<!--
 <style>
   a {
     color :#00bcd4;
     text-decoration: none;
   }
 </style>
+-->
 </html>
