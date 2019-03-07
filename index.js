@@ -53,7 +53,6 @@ app.get('/data', (req, res) => res.render('./form_a320'))
 app.get('/news', (req, res) => {
 	dummy_connection.query('SELECT * from news', function (error, results, fields) {
 	  if (error) throw error;
-	  console.log('The solution is: ', JSON.stringify(results,null,4));
 	  res.send(JSON.stringify(results),null,4)
 	});
 })
