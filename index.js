@@ -29,12 +29,12 @@ connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
   console.log('The solution is: ', results[0].solution);
 });
 
-app.get('/phree', (req, res) => res.send('index'))
+app.get('/phree', (req, res) => res.render('./form'))
 
 app.get('/wan', (req, res) => {
 	connection.query('SELECT * from news', function (error, results, fields) {
 	  if (error) throw error;
-	  console.log('The solution is: ', results);
-	  res.send(results)
+	  console.log('The solution is: ', JSON.stringify(results,null,4));
+	  res.send(JSON.stringify(results),null,4)
 	});
 })
